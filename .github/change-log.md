@@ -6,6 +6,6 @@ All notable changes to this project will be documented here.
 ### Added  
 - New feature descriptions.  
 
-## [1.0.0] - 2025-12-28  
+## [1.0.5] - 2025-12-28  
 ### Added  
 - Initial release of Prmo✗ Bot.  
