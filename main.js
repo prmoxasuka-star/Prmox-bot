@@ -762,7 +762,8 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 break;
             case userMessage.startsWith('.chatbot'):
                 if (!isGroup) {
-                    await sock.sendMessage(chatId, {                  react: { text: '🙃', key: message.key },
+                    await sock.sendMessage(chatId, {
+                             react: { text: '🥴', key: message.key },
                     text: "❕ 𝚃𝚑𝚒𝚜 𝚌𝚘𝚖𝚖𝚊𝚗𝚍 𝚌𝚊𝚗 𝚘𝚗𝚕𝚢 𝚋𝚎 𝚞𝚜𝚎𝚍 𝚒𝚗 𝚊 𝚐𝚛𝚘𝚞𝚙...", ...channelInfo }, { quoted: message });
                     return;
                 }
