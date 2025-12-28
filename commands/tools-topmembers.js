@@ -52,14 +52,11 @@ function topMembers(sock, chatId, isGroup) {
         text: '❕ 𝙽𝚘 𝚖𝚎𝚜𝚜𝚊𝚐𝚎 𝚊𝚌𝚝𝚒𝚟𝚒𝚝𝚢 𝚛𝚎𝚌𝚘𝚛𝚍𝚎𝚍 𝚢𝚎𝚝...' });
         return;
     }
-        await sock.sendMessage(chatId, {
-            react: { text: '🏅', key: message.key }
-        });
+    
     let message = '*🏆 𝚃𝙾𝙿 𝙼𝙴𝙼𝙱𝙴𝚁𝚂 🏆*\n\n┄┄┄┄┄┄┄┄┄┄┄\n🎟️ 𝚃𝚘𝚙 𝚖𝚎𝚖𝚋𝚎𝚛𝚜 𝚋𝚊𝚜𝚎𝚍 𝚘𝚗 𝚖𝚎𝚜𝚜𝚊𝚐𝚎 𝚌𝚘𝚞𝚗𝚝:\n\n';
     sortedMembers.forEach(([userId, count], index) => {
         message += `${index + 1}. @${userId.split('@')[0]} - ${count} messages\n`;
     });
-
     sock.sendMessage(chatId, { text: message, mentions: sortedMembers.map(([userId]) => userId) });
 }
 
