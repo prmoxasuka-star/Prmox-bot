@@ -109,7 +109,6 @@ const { autoStatusCommand, handleStatusUpdate } = require('./commands/owner-auto
 const { simpCommand } = require('./commands/simp');
 const { stupidCommand } = require('./commands/stupid');
 const stickerTelegramCommand = require('./commands/stickertelegram');
-const textmakerCommand = require('./commands/tools-textmaker');
 const { handleAntideleteCommand, handleMessageRevocation, storeMessage } = require('./commands/owner-antidelete');
 const clearTmpCommand = require('./commands/cleartmp');
 const setProfilePicture = require('./commands/setpp');
@@ -143,7 +142,10 @@ const { anticallCommand, readState: readAnticallState } = require('./commands/ow
 const { pmblockerCommand, readState: readPmBlockerState } = require('./commands/pmblocker');
 const settingsCommand = require('./commands/settings');
 const soraCommand = require('./commands/sora');
-
+const textmakerCommand = async (...args) => {
+    const mod = await import('./commands/tools-textmaker.js');
+    return mod.default(...args);
+};
 // Global settings
 global.packname = settings.packname;
 global.author = settings.author;
